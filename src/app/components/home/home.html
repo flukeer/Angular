@@ -1,0 +1,47 @@
+<div class="anime-container">
+
+  <div class="toolbar">
+    <div class="category-menu">
+      <button (click)="changeCategory('monday')" class="btn-menu">อัปเดตวันจันทร์</button>
+      <button (click)="changeCategory('upcoming')" class="btn-menu">กำลังจะฉาย</button>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        [ngModel]="searchQuery()"
+        (ngModelChange)="searchQuery.set($event)"
+        placeholder="🔍 ค้นหาชื่ออนิเมะที่นี่..."
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <h2 class="section-title">{{ currentTitle() }}</h2>
+
+  <div class="anime-grid">
+    @for (anime of filteredAnimeList(); track anime.mal_id) {
+      <div class="anime-card">
+        <div class="poster-wrapper">
+          <img [src]="anime.images.webp.large_image_url" [alt]="anime.title" class="anime-poster">
+          <span class="anime-type">{{ anime.type }}</span>
+          @if (anime.score) {
+            <span class="anime-score">★ {{ anime.score }}</span>
+          }
+        </div>
+        <div class="anime-info">
+          <h3>{{ anime.title_english || anime.title }}</h3>
+          <p class="episodes">
+            @if (anime.episodes) {
+              จำนวน: {{ anime.episodes }} ตอน
+            } @else {
+              สถานะ: {{ anime.status }}
+            }
+          </p>
+        </div>
+      </div>
+    } @empty {
+      <p class="loading">❌ ไม่พบอนิเมะที่คุณค้นหา หรือกำลังโหลดข้อมูล...</p>
+    }
+  </div>
+</div>

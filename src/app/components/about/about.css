@@ -1,0 +1,142 @@
+.about-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* ตกแต่งส่วนหัวโปรไฟล์ */
+.profile-card {
+  text-align: center;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid #fff;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #111;
+}
+
+.profile-title {
+  margin: 5px 0;
+  color: #dd0031;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.profile-location {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.profile-bio {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ส่วนบล็อกหัวข้อกลุ่ม */
+.section-block {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* ตกแต่งปุ่มโซเชียลมีเดีย */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  text-decoration: none;
+  color: #444;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-left: 4px solid #ccc; /* ตัวแปรสีจะถูกทับด้วยสไตล์ใน HTML */
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+/* ตกแต่งการ์ดแสดงผลงาน */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.project-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.project-desc {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.project-tech span {
+  font-size: 0.75rem;
+  background: #fff5f6;
+  color: #dd0031;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}

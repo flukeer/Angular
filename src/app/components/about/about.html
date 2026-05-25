@@ -1,2 +1,40 @@
-<p>about works!</p>
-<h1>Hello</h1>
+<div class="about-container">
+  
+  <div class="profile-card">
+    <div class="avatar-wrapper">
+      <img [src]="profile().avatar" [alt]="profile().name" class="profile-avatar">
+    </div>
+    <h1 class="profile-name">{{ profile().name }}</h1>
+    <p class="profile-title">{{ profile().title }}</p>
+    <p class="profile-location">📍 {{ profile().location }}</p>
+    <p class="profile-bio">{{ profile().bio }}</p>
+  </div>
+
+  <div class="section-block">
+    <h3 class="section-title">🌐 Connect with me</h3>
+    <div class="social-grid">
+      @for (link of socialLinks(); track link.name) {
+        <a [href]="link.url" target="_blank" class="social-btn" [style.border-left-color]="link.color">
+          <span class="social-icon">{{ link.icon }}</span>
+          <span class="social-name">{{ link.name }}</span>
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h3 class="section-title">📂 My Projects</h3>
+    <div class="project-list">
+      @for (project of projects(); track project.title) {
+        <div class="project-card">
+          <h4>{{ project.title }}</h4>
+          <p class="project-desc">{{ project.desc }}</p>
+          <div class="project-tech">
+            <span>{{ project.tech }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+</div>

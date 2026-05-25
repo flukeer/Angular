@@ -14,19 +14,17 @@ export class Home implements OnInit {
   // ใช้ Signal เก็บข้อมูล Array ของอนิเมะ (ตัวเลือกแนะนำของ Angular ยุคใหม่)
   protected animeList = signal<any[]>([]);
 
-  // เพิ่ม Signal สำหรับเก็บหัวข้อเพื่อเอาไปโชว์ที่หน้าจอ
-  protected currentTitle = signal<string>(' อนิเมะอัปเดตวันจันทร์ (Monday Schedule)');
+  protected currentTitle = signal<string>(' อนิเมะอัปเดตวันจันทร์ ');
 
-  // 4. สร้าง Signal สำหรับเก็บคำค้นหาที่ผู้ใช้พิมพ์
   protected searchQuery = signal<string>('');
 
-  // 5. ใช้ computed กรองข้อมูลอัตโนมัติเมื่อ animeList หรือ searchQuery มีการเปลี่ยนแปลง
+
   protected filteredAnimeList = computed(() => {
     const query = this.searchQuery().toLowerCase().trim();
     const list = this.animeList();
 
     if (!query) {
-      return list; // ถ้าไม่ได้พิมพ์อะไร ให้คืนค่ารายการทั้งหมด
+      return list;
     }
 
     // กรองหาจากชื่อเรื่อง (ตรวจสอบทั้งชื่อภาษาอังกฤษ และชื่อหลัก)
@@ -47,10 +45,10 @@ export class Home implements OnInit {
 
     if (type === 'monday') {
       apiUrl = 'https://api.jikan.moe/v4/schedules/monday?sfw';
-      this.currentTitle.set(' อนิเมะอัปเดตวันจันทร์ (Monday Schedule)');
+      this.currentTitle.set(' อนิเมะอัปเดตวันจันทร์ ');
     } else if (type === 'upcoming') {
       apiUrl = 'https://api.jikan.moe/v4/seasons/upcoming';
-      this.currentTitle.set(' อนิเมะที่กำลังจะฉายเร็วๆ นี้ (Upcoming Anime)');
+      this.currentTitle.set(' อนิเมะที่กำลังจะฉายเร็วๆ นี้ ');
     }
 
     // ล้างข้อมูลเก่าออกก่อน เพื่อให้ผู้ใช้เห็นว่ากำลังโหลดใหม่

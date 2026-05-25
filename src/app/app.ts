@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header';{}
 @Component({
   selector: 'app-root',
   // 2. ใส่ RouterOutlet ลงใน array imports
-  imports: [RouterOutlet, RouterLink, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
